@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chichengwei.github.io/sitemap.xml
+Sitemap: https://baxterchi.com/sitemap.xml
