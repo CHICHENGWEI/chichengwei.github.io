@@ -44,14 +44,15 @@
       "alternateName": "CHI, CHENG-WEI",
       "jobTitle": "英文家教 English Tutor",
       "url": "https://baxterenglish.com/",
-      "email": "mailto:vaguer-fulsome7@icloud.com",
+      "email": "mailto:baxterenglish.ai@gmail.com",
       "image": "https://baxterenglish.com/og-image.jpg",
       "alumniOf": { "@type": "CollegeOrUniversity", "name": "國立臺灣大學" },
       "affiliation": { "@type": "CollegeOrUniversity", "name": "國立臺灣大學 外國語文學系" },
       "knowsLanguage": ["zh-Hant", "en"],
       "sameAs": [
         "https://www.facebook.com/BaxterChiEnglish",
-        "https://www.instagram.com/chi_cheng_wei/"
+        "https://www.instagram.com/baxter_english_/",
+        "https://www.youtube.com/channel/UCELFojFhKIKP2xqq7kwU9Jw"
       ],
       "knowsAbout": ["英文教學","英文文法","學測英文","國中教育會考英文","IELTS 雅思","TOEFL 托福","TOEIC 多益","SAT","AP English","劍橋語檢","全民英檢"],
       "hasCredential": [
@@ -66,11 +67,12 @@
       "name": "紀承緯 英文家教",
       "description": "台大外文系學生提供的一對一／一對二英文家教，以全英文授課為主，涵蓋私小雙語、會考英文複習、學測英文衝刺、雅思托福與 SAT／AP 準備。",
       "url": "https://baxterenglish.com/",
-      "email": "mailto:vaguer-fulsome7@icloud.com",
+      "email": "mailto:baxterenglish.ai@gmail.com",
       "provider": { "@id": "https://baxterenglish.com/#person" },
       "sameAs": [
         "https://www.facebook.com/BaxterChiEnglish",
-        "https://www.instagram.com/chi_cheng_wei/"
+        "https://www.instagram.com/baxter_english_/",
+        "https://www.youtube.com/channel/UCELFojFhKIKP2xqq7kwU9Jw"
       ],
       "image": "https://baxterenglish.com/og-image.jpg",
       "priceRange": "NT$800-2000 / hr",
@@ -463,6 +465,13 @@
   .c-btn:hover{background:var(--red-deep);}
   .c-btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.5);}
   .c-btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+  .c-qr{width:120px;height:120px;background:#fff;padding:6px;border-radius:8px;display:block;margin:12px 0 4px;}
+  .c-btn.line{background:#06C755;}
+  .c-btn.line:hover{background:#05A648;}
+  .social-row{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .social-row a{color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 16px;font-size:.85rem;text-decoration:none;}
+  .social-row a:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+  @media (max-width:600px){.c-qr{display:none;}}
   .trial-strip{margin-top:48px;display:inline-flex;align-items:center;gap:14px;background:var(--hl);color:var(--ink-deep);padding:13px 26px;border-radius:6px;font-weight:700;transform:rotate(-.6deg);box-shadow:var(--shadow);}
 
   /* ---------- footer ---------- */
@@ -1152,8 +1161,15 @@
     <div class="container">
       <div class="part-label" style="justify-content:center;"><span class="part-box">聯絡方式</span><span class="part-en">Get in Touch</span></div>
       <h2 class="sec-title">準備好開始了嗎？</h2>
-      <p class="sec-lead">私訊或來信，說明學生階段與目標即可。</p>
+      <p class="sec-lead">LINE、私訊或來信，說明學生階段與目標即可。</p>
       <div class="contact-cards">
+        <div class="c-card">
+          <h3>LINE 官方帳號</h3>
+          <p>加入好友後直接留言，說明學生階段與目標即可。</p>
+          <p class="c-mail">@baxter_english</p>
+          <img class="c-qr" src="img/line-qr.png" width="120" height="120" alt="LINE 官方帳號 @baxter_english 加好友 QR code" loading="lazy">
+          <div class="c-actions"><a class="c-btn line" href="https://line.me/R/ti/p/@baxter_english" target="_blank" rel="noopener">加入 LINE 好友</a></div>
+        </div>
         <div class="c-card">
           <h3>💬 Facebook 私訊</h3>
           <p>直接透過粉專私訊聯繫，說明學生階段與目標即可。</p>
@@ -1161,12 +1177,18 @@
         </div>
         <div class="c-card">
           <h3>✉️ Email</h3>
-          <p class="c-mail" id="emailText">vaguer-fulsome7@icloud.com</p>
+          <p class="c-mail" id="emailText">baxterenglish.ai@gmail.com</p>
           <div class="c-actions">
-            <a class="c-btn" href="mailto:vaguer-fulsome7@icloud.com?subject=%E5%AE%B6%E6%95%99%E8%A9%A2%E5%95%8F">寄送 Email</a>
+            <a class="c-btn" href="mailto:baxterenglish.ai@gmail.com?subject=%E5%AE%B6%E6%95%99%E8%A9%A2%E5%95%8F">寄送 Email</a>
             <button class="c-btn ghost" id="copyEmail">複製 Email</button>
           </div>
         </div>
+      </div>
+      <div class="social-row">
+        <a href="https://www.facebook.com/BaxterChiEnglish" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/baxter_english_/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/channel/UCELFojFhKIKP2xqq7kwU9Jw" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://line.me/R/ti/p/@baxter_english" target="_blank" rel="noopener">LINE</a>
       </div>
       <div class="trial-strip">✏️ 提供 1 小時試教</div>
     </div>
@@ -1429,7 +1451,7 @@
   /* copy email */
   var copyBtn = document.getElementById('copyEmail');
   copyBtn.addEventListener('click', function(){
-    var email = 'vaguer-fulsome7@icloud.com';
+    var email = 'baxterenglish.ai@gmail.com';
     function done(){ copyBtn.textContent = '已複製 ✓'; setTimeout(function(){ copyBtn.textContent = '複製 Email'; }, 1800); }
     if(navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(email).then(done, done);
