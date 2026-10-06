@@ -98,14 +98,14 @@
       "@type": "FAQPage",
       "@id": "https://baxterenglish.com/#faq",
       "mainEntity": [
-        { "@type": "Question", "name": "有提供試教嗎？怎麼進行？要收費嗎？", "acceptedAnswer": { "@type": "Answer", "text": "有，建議 1 小時，依正式鐘點計費、課後結算，無折扣。可用線上預約表單選時間，或私訊約定；到府、咖啡廳或線上皆可。" } },
+        { "@type": "Question", "name": "有提供試教嗎？怎麼進行？要收費嗎？", "acceptedAnswer": { "@type": "Answer", "text": "有，建議 1 小時，依正式鐘點計費、課後結算，無折扣。用 LINE 傳訊息約時間即可；到府、咖啡廳或線上皆可。" } },
         { "@type": "Question", "name": "上課真的是全英文嗎？到什麼程度？", "acceptedAnswer": { "@type": "Answer", "text": "比例依學生體系而定。雙語小學、國際部與實驗教育學生為全程英文，包含 Math、Social Studies、Science 等學科英語。一般公私立國高中學生的文法規則會用中文講解以確保觀念精準，例句、練習、討論與口說則用英文。檢定與留學考試依考科調整，口說寫作全英，閱讀聽力的解題策略用中文說明。實際比例會在試教時確認。" } },
         { "@type": "Question", "name": "教材需要自己準備嗎？", "acceptedAnswer": { "@type": "Answer", "text": "課程會系統性協助挑選教材，並提供自編講義。國內升學的國高中生，另協助挑選複習講義、坊間模考講義，並整理歷屆正式模考題目。" } },
         { "@type": "Question", "name": "家長要怎麼掌握學習進度？", "acceptedAnswer": { "@type": "Answer", "text": "每次上課後會提供上課內容供複習，並以文字訊息與 Google Sheets 提供具體課程規劃與進度追蹤，考後也會依答題狀況分析錯誤原因、調整策略。" } },
         { "@type": "Question", "name": "可以兩人或多人一起上嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。一對多為每人計費、費用較一對一低；2 人各階段都可以，若兩位學生為不同學習階段，收費會另行討論。國高中另有 3–4 人小班（籌備中），每週一次、一次 2 小時，使用自編講義與考卷；費用依人數，每人每小時國中 700–800、高中 800–900。開班時間確定前，可先透過 LINE 登記。" } },
-        { "@type": "Question", "name": "目前還有時段可以排課嗎？", "acceptedAnswer": { "@type": "Answer", "text": "學期中週末與平日晚間已排滿，新學生以平日下午至傍晚為主，線上亦可。寒暑假課表重排，空檔較多。" } },
+        { "@type": "Question", "name": "目前還有時段可以排課嗎？", "acceptedAnswer": { "@type": "Answer", "text": "有的，歡迎詢問！上課時段為平日晚上與週六、週日全天，到府或線上皆可；連假期間全天都可補課。實際空檔依現有課表個別確認，寒暑假另排課表。" } },
         { "@type": "Question", "name": "上課地點有哪些選擇？", "acceptedAnswer": { "@type": "Answer", "text": "雙北到府上課（以汽、機車代步，不須考慮與捷運或公車站的距離）、咖啡廳或速食店，也提供線上授課。" } },
-        { "@type": "Question", "name": "臨時需要請假或調課怎麼辦？", "acceptedAnswer": { "@type": "Answer", "text": "請盡早告知，會盡量安排補課；排不進來的話，可改線上補課或順延。" } },
+        { "@type": "Question", "name": "臨時需要請假或調課怎麼辦？", "acceptedAnswer": { "@type": "Answer", "text": "請盡早告知，會盡量安排補課（連假期間全天都可補課）；排不進來的話，可改線上補課或順延。" } },
         { "@type": "Question", "name": "試教後如果覺得不合適呢？", "acceptedAnswer": { "@type": "Answer", "text": "直接說明即可，不會有後續聯繫。" } }
       ]
     }
@@ -453,7 +453,8 @@
   .booking-list strong{color:var(--ink-deep);}
   .booking-note{margin-top:22px;padding-top:16px;border-top:1px dashed var(--line);font-size:.85rem;color:var(--ink-soft);}
   .booking-embed{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-sm);min-height:560px;display:flex;}
-  .booking-embed iframe{width:100%;min-height:620px;border:0;display:block;}
+  .booking-embed.line-box{min-height:auto;}
+  @media (max-width:880px){.booking-embed.line-box{order:-1;}}
   .booking-placeholder{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:52px 34px;}
   .bp-icon{font-size:2.6rem;line-height:1;margin-bottom:16px;}
   .bp-title{font-family:var(--f-disp);font-weight:700;font-size:1.14rem;color:var(--ink-deep);margin-bottom:10px;}
@@ -521,12 +522,12 @@
         <li><a href="#materials">教材實例</a></li>
         <li><a href="#pricing">課程費用</a></li>
         <li><a href="#faq">常見問題</a></li>
-        <li><a href="#booking">預約試教</a></li>
+        <li><a href="#booking">試教</a></li>
         <li><a href="#contact">聯絡方式</a></li>
         <li><a href="/portfolio/">作品集</a></li>
       </ul>
     </nav>
-    <a href="#booking" class="nav-cta">預約試教</a>
+    <a href="https://line.me/R/ti/p/@baxter_english" class="nav-cta" target="_blank" rel="noopener">LINE 詢問</a>
     <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false"><span></span></button>
   </div>
 </header>
@@ -543,7 +544,7 @@
           <p class="hero-school">國立臺灣大學　外國語文學系（台大外文）</p>
           <p class="hero-tagline">以<span class="hl">全英文授課</span>為主。從私小雙語、<span class="hl">會考</span>與<span class="hl">學測英文衝刺</span>，到雅思、托福、SAT／AP——系統性規劃、自編講義、文法全解。</p>
           <div class="hero-cta">
-            <a href="#booking" class="btn btn-red">預約 1 小時試教</a>
+            <a href="https://line.me/R/ti/p/@baxter_english" class="btn btn-red" target="_blank" rel="noopener">LINE 詢問試教</a>
             <a href="#materials" class="btn btn-ghost">看教材實例 ↓</a>
           </div>
         </div>
@@ -581,15 +582,15 @@
         <div class="status-head">
           <span class="status-stamp">NOW</span>
           <p class="status-title">目前的排課狀況</p>
-          <span class="status-date">更新於 2026 / 09</span>
+          <span class="status-date">更新於 2026 / 10</span>
         </div>
         <div class="status-grid">
-          <div class="status-row"><span class="status-k">試教</span><span>平日<strong>下午至傍晚</strong>（晚間第一堂課前）可安排；<strong>線上亦可</strong></span></div>
-          <div class="status-row"><span class="status-k">週末</span><span>週六、週日<strong>已全數排滿</strong>，含晚間</span></div>
-          <div class="status-row"><span class="status-k">平日晚間</span><span>皆已排課</span></div>
-          <div class="status-row"><span class="status-k">名額</span><span>以平日下午為主，時段個別確認</span></div>
+          <div class="status-row"><span class="status-k">時段</span><span><strong>平日晚上、週六日全天</strong>：陸續排課中，歡迎詢問目前空檔</span></div>
+          <div class="status-row"><span class="status-k">地點</span><span>雙北到府或線上皆可</span></div>
+          <div class="status-row"><span class="status-k">補課</span><span><strong>連假期間全天都可補課</strong></span></div>
+          <div class="status-row"><span class="status-k">試教</span><span>與上課時段相同，<strong>線上亦可</strong></span></div>
         </div>
-        <p class="status-foot">可預約時段見<a href="#booking">下方預約表單</a>；若都不方便，歡迎私訊詢問。</p>
+        <p class="status-foot">實際空檔依現有課表個別確認，<strong>歡迎直接 <a href="https://line.me/R/ti/p/@baxter_english" target="_blank" rel="noopener">LINE 詢問</a></strong>。</p>
       </div>
     </div>
   </section>
@@ -951,7 +952,7 @@
       <div class="timeline">
         <div class="step">
           <div class="step-no">01</div>
-          <div><h3>預約或私訊</h3><p>用<a href="#booking" style="color:var(--red);border-bottom:1px solid currentColor;">下方預約表單</a>直接選時間，或以 Messenger、Email 說明學生階段、目標與可上課時段。</p></div>
+          <div><h3>LINE 詢問</h3><p>加入 <a href="https://line.me/R/ti/p/@baxter_english" target="_blank" rel="noopener" style="color:var(--red);border-bottom:1px solid currentColor;">LINE 官方帳號</a>，傳學生階段、目標與可上課時段即可；也可用 Messenger 或 Email。</p></div>
         </div>
         <div class="step">
           <div class="step-no">02</div>
@@ -1028,7 +1029,7 @@
             <tr data-stage="cert"><td>SAT、AP</td><td class="val">1,500+</td></tr>
           </tbody>
         </table>
-        <h3 class="group-h">國高中小班（3–4 人）<span class="group-status">籌備中・可先預約</span></h3>
+        <h3 class="group-h">國高中小班（3–4 人）<span class="group-status">籌備中・可先登記</span></h3>
         <table class="price-table group-table">
           <thead><tr><th scope="col">每班人數（元／小時／人）</th><th scope="col">國中</th><th scope="col">高中</th></tr></thead>
           <tbody>
@@ -1060,9 +1061,9 @@
         <div class="log-card">
           <h3>🕐 教學時段</h3>
           <ul>
-            <li>一週七天皆有排課（含寒暑假、平日上下午時段）</li>
-            <li><strong>週末已全數排滿</strong>；平日晚間亦已排課</li>
-            <li>新學生以<strong>平日下午至傍晚</strong>為主</li>
+            <li><strong>平日晚上、週六日全天</strong>：陸續排課中，歡迎詢問目前空檔</li>
+            <li><strong>連假期間全天都可補課</strong></li>
+            <li>寒暑假另排課表；實際空檔歡迎詢問</li>
           </ul>
         </div>
         <div class="log-card">
@@ -1085,7 +1086,7 @@
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">有提供試教嗎？怎麼進行？要收費嗎？</button>
-          <div class="faq-a"><div class="faq-a-inner">有，建議 1 小時，<strong>依正式鐘點計費、課後結算</strong>，無折扣。可用下方預約表單選時間，或私訊約定；到府、咖啡廳或線上皆可。</div></div>
+          <div class="faq-a"><div class="faq-a-inner">有，建議 1 小時，<strong>依正式鐘點計費、課後結算</strong>，無折扣。用 LINE 傳訊息約時間即可；到府、咖啡廳或線上皆可。</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">上課真的是全英文嗎？到什麼程度？</button>
@@ -1109,7 +1110,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">目前還有時段可以排課嗎？</button>
-          <div class="faq-a"><div class="faq-a-inner">學期中週末與平日晚間已排滿，新學生以<strong>平日下午至傍晚</strong>為主，線上亦可。寒暑假課表重排，空檔較多。</div></div>
+          <div class="faq-a"><div class="faq-a-inner">有的，歡迎詢問！上課時段為<strong>平日晚上</strong>與<strong>週六、週日全天</strong>，到府或線上皆可；<strong>連假期間全天都可補課</strong>。實際空檔依現有課表個別確認，寒暑假另排課表。</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">上課地點有哪些選擇？</button>
@@ -1117,7 +1118,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">臨時需要請假或調課怎麼辦？</button>
-          <div class="faq-a"><div class="faq-a-inner">請盡早告知，會盡量安排補課；排不進來的話，可改線上補課或順延。</div></div>
+          <div class="faq-a"><div class="faq-a-inner">請盡早告知，會盡量安排補課（連假期間全天都可補課）；排不進來的話，可改線上補課或順延。</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">試教後如果覺得不合適呢？</button>
@@ -1130,9 +1131,9 @@
   <!-- ============ 預約試教 ============ -->
   <section class="sec-pad" id="booking">
     <div class="container reveal">
-      <div class="part-label"><span class="part-box">預約試教</span><span class="part-en">Book a Trial Lesson</span></div>
-      <h2 class="sec-title"><span class="squig">直接選一個時間</span></h2>
-      <p class="sec-lead">送出後一天內回覆，確認地點與細節。</p>
+      <div class="part-label"><span class="part-box">試教</span><span class="part-en">Book a Trial Lesson</span></div>
+      <h2 class="sec-title"><span class="squig">用 LINE 約試教</span></h2>
+      <p class="sec-lead">傳訊息後一天內回覆，確認時間、地點與細節。</p>
 
       <div class="booking-grid">
         <aside class="booking-info">
@@ -1143,7 +1144,7 @@
             <li><strong>內容</strong>　依學生階段做一次完整的程度確認與方向討論</li>
             <li><strong>費用</strong>　依正式鐘點計費、課後結算（費率見上方費用表）</li>
           </ul>
-          <h3 style="margin-top:26px;">預約前請先準備</h3>
+          <h3 style="margin-top:26px;">傳訊息時請附上</h3>
           <ul class="booking-list">
             <li>學生<strong>年級</strong>與<strong>就讀學校</strong></li>
             <li>希望上課的<strong>行政區</strong>（或選線上）</li>
@@ -1159,19 +1160,15 @@
             <li><strong>共享資料夾</strong>　教材電子檔、音檔、規劃表都放在裡面</li>
           </ul>
 
-          <p class="booking-note">表單開放的是平日下午時段。若都不方便，歡迎私訊詢問。</p>
+          <p class="booking-note">不方便用 LINE 的話，也可以用 Facebook 私訊或 Email（見下方聯絡方式）。</p>
         </aside>
 
-        <div class="booking-embed">
-          <!-- ★★★ 設定好 Google 預約頁面後，把下面整個 div 換成 Google 提供的「內嵌預約頁面」程式碼 ★★★
-               取得方式：Google 日曆 → 預約頁面 → 選項 → 分享選項 → 網站嵌入 → 內嵌預約頁面 → 複製程式碼
-               程式碼長得像：<iframe src="https://calendar.google.com/calendar/appointments/schedules/XXXX?gv=true" ...></iframe>
-          -->
+        <div class="booking-embed line-box">
           <div class="booking-placeholder">
-            <span class="bp-icon">🗓️</span>
-            <p class="bp-title">預約系統設定中</p>
-            <p class="bp-text">線上預約即將開放，目前請透過粉專私訊或 Email 聯繫。</p>
-            <a href="#contact" class="btn btn-red" style="margin-top:18px;">私訊預約試教</a>
+            <p class="bp-title">LINE 官方帳號　@baxter_english</p>
+            <img class="c-qr" src="line-qr.png" width="140" height="140" alt="LINE 官方帳號 @baxter_english 加好友 QR code" loading="lazy" style="width:140px;height:140px;margin:10px auto 14px;border:1px solid var(--line-soft);">
+            <p class="bp-text">加入好友後，直接傳學生年級、學校與學習目標，一天內回覆。</p>
+            <a href="https://line.me/R/ti/p/@baxter_english" class="c-btn line" target="_blank" rel="noopener" style="margin-top:18px;padding:12px 26px;font-size:.95rem;">加入 LINE 好友</a>
           </div>
         </div>
       </div>
@@ -1243,31 +1240,6 @@
 
 <script>
 (function(){
-  /* ══════════════════════════════════════════════════════════════
-     預約試教｜設定處
-     把 Google 預約頁面的網址貼進下面的引號中間，其他都不用動。
-     取得方式：Google 日曆 → 左側「預約頁面」→ 對著你的預約頁面 →
-               選項 → 分享選項 → 複製連結
-     網址長得像：https://calendar.google.com/calendar/appointments/schedules/XXXXXXXX
-     留空的話，網站會顯示「預約系統設定中」並引導改用私訊。
-     ══════════════════════════════════════════════════════════════ */
-  var BOOKING_URL = '';
-
-  var bookingBox = document.querySelector('.booking-embed');
-  if (bookingBox && BOOKING_URL.trim()) {
-    var src = BOOKING_URL.trim();
-    if (src.indexOf('gv=true') === -1) {
-      src += (src.indexOf('?') === -1 ? '?' : '&') + 'gv=true';
-    }
-    var frame = document.createElement('iframe');
-    frame.src = src;
-    frame.title = '預約試教時段';
-    frame.loading = 'lazy';
-    frame.setAttribute('frameborder', '0');
-    bookingBox.innerHTML = '';
-    bookingBox.appendChild(frame);
-  }
-
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* scroll progress + to-top ring */
