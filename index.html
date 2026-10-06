@@ -65,7 +65,7 @@
       "@type": "ProfessionalService",
       "@id": "https://baxterenglish.com/#service",
       "name": "紀承緯 英文家教",
-      "description": "台大外文系學生提供的一對一／一對二英文家教，以全英文授課為主，涵蓋私小雙語、會考英文複習、學測英文衝刺、雅思托福與 SAT／AP 準備。",
+      "description": "台大外文系學生提供的一對一與一對多（2 人、國高中小班）英文家教，以全英文授課為主，涵蓋私小雙語、會考英文複習、學測英文衝刺、雅思托福與 SAT／AP 準備。",
       "url": "https://baxterenglish.com/",
       "email": "mailto:baxterenglish.ai@gmail.com",
       "provider": { "@id": "https://baxterenglish.com/#person" },
@@ -102,7 +102,7 @@
         { "@type": "Question", "name": "上課真的是全英文嗎？到什麼程度？", "acceptedAnswer": { "@type": "Answer", "text": "比例依學生體系而定。雙語小學、國際部與實驗教育學生為全程英文，包含 Math、Social Studies、Science 等學科英語。一般公私立國高中學生的文法規則會用中文講解以確保觀念精準，例句、練習、討論與口說則用英文。檢定與留學考試依考科調整，口說寫作全英，閱讀聽力的解題策略用中文說明。實際比例會在試教時確認。" } },
         { "@type": "Question", "name": "教材需要自己準備嗎？", "acceptedAnswer": { "@type": "Answer", "text": "課程會系統性協助挑選教材，並提供自編講義。國內升學的國高中生，另協助挑選複習講義、坊間模考講義，並整理歷屆正式模考題目。" } },
         { "@type": "Question", "name": "家長要怎麼掌握學習進度？", "acceptedAnswer": { "@type": "Answer", "text": "每次上課後會提供上課內容供複習，並以文字訊息與 Google Sheets 提供具體課程規劃與進度追蹤，考後也會依答題狀況分析錯誤原因、調整策略。" } },
-        { "@type": "Question", "name": "可以一對二上課嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。一對二為每人計費、費用較一對一低；若兩位學生為不同學習階段，收費會另行討論。" } },
+        { "@type": "Question", "name": "可以兩人或多人一起上嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。一對多為每人計費、費用較一對一低；2 人各階段都可以，若兩位學生為不同學習階段，收費會另行討論。國高中另有 3–4 人小班（籌備中），每週一次、一次 2 小時，使用自編講義與考卷；費用依人數，每人每小時國中 700–800、高中 800–900。開班時間確定前，可先透過 LINE 登記。" } },
         { "@type": "Question", "name": "目前還有時段可以排課嗎？", "acceptedAnswer": { "@type": "Answer", "text": "學期中週末與平日晚間已排滿，新學生以平日下午至傍晚為主，線上亦可。寒暑假課表重排，空檔較多。" } },
         { "@type": "Question", "name": "上課地點有哪些選擇？", "acceptedAnswer": { "@type": "Answer", "text": "雙北到府上課（以汽、機車代步，不須考慮與捷運或公車站的距離）、咖啡廳或速食店，也提供線上授課。" } },
         { "@type": "Question", "name": "臨時需要請假或調課怎麼辦？", "acceptedAnswer": { "@type": "Answer", "text": "請盡早告知，會盡量安排補課；排不進來的話，可改線上補課或順延。" } },
@@ -399,6 +399,16 @@
   .price-table td.val{text-align:right;font-family:var(--f-mono);font-weight:600;color:var(--red);white-space:nowrap;}
   .price-table tbody tr:hover{background:var(--hl-soft);}
   .price-table tr.hidden-row{display:none;}
+  .group-status{display:inline-block;margin-bottom:12px;padding:5px 14px;border-radius:999px;background:var(--hl-soft);color:var(--red);font-weight:700;font-size:.85rem;}
+  .group-table th:not(:first-child){text-align:right;}
+  @media (max-width:600px){.group-table th,.group-table td{padding:13px 12px;}}
+  .group-h{font-size:1rem;color:var(--ink-deep);margin:0 0 12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .price-table + .group-h{margin-top:30px;}
+  .group-h .group-status{margin-bottom:0;}
+  .group-notes{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:8px;font-size:.9rem;color:var(--ink-soft);}
+  .group-notes strong{color:var(--ink-deep);}
+  .tp-group{font-size:.85rem!important;color:var(--ink-soft);margin:-12px 0 0!important;}
+  @media (max-width:600px){.mode-toggle{flex-wrap:wrap;}.mode-btn{padding:9px 14px;font-size:.85rem;}}
   .price-foot{margin-top:20px;display:flex;flex-direction:column;gap:6px;font-size:.88rem;color:var(--ink-soft);}
   .price-foot strong{color:var(--ink-deep);}
 
@@ -659,7 +669,7 @@
           <div class="fact-row"><div class="fact-k">姓名 NAME</div><div class="fact-v">紀承緯　CHI, CHENG-WEI</div></div>
           <div class="fact-row"><div class="fact-k">學校 SCHOOL</div><div class="fact-v">國立臺灣大學</div></div>
           <div class="fact-row"><div class="fact-k">系所 DEPT.</div><div class="fact-v">外國語文學系</div></div>
-          <div class="fact-row"><div class="fact-k">形式 FORMAT</div><div class="fact-v">一對一・一對二｜長期・短期</div></div>
+          <div class="fact-row"><div class="fact-k">形式 FORMAT</div><div class="fact-v">一對一・一對多（2 人、國高中小班）｜長期・短期</div></div>
           <div class="fact-row"><div class="fact-k">地區 AREA</div><div class="fact-v">雙北到府／咖啡廳／線上</div></div>
         </div>
       </div>
@@ -744,6 +754,7 @@
             <h4>為什麼適合？</h4>
             <p>段考與會考雙軌規劃：段考以校內範圍為主，搭配題庫出題與自編講義，並依每次考試結果調整策略。</p>
             <p class="tp-price">NT$ 1,300+<small>／小時（一對一）起</small></p>
+            <p class="tp-group">小班（3–4 人）每人 700+／小時・籌備中</p>
             <a class="tp-link" href="#pricing">完整費用表 →</a>
           </aside>
         </div>
@@ -763,6 +774,7 @@
             <h4>為什麼適合？</h4>
             <p>自編文法總複習講義、單字與作文進度表、複習與模考講義挑選、歷屆正式模考題整理——完整衝刺規劃（見教材實例）。</p>
             <p class="tp-price">NT$ 1,600+<small>／小時（一對一）起</small></p>
+            <p class="tp-group">小班（3–4 人）每人 800+／小時・籌備中</p>
             <a class="tp-link" href="#materials">看講義實例 →</a>
           </aside>
         </div>
@@ -966,12 +978,12 @@
     <div class="container reveal">
       <div class="part-label"><span class="part-box">第捌部分</span><span class="part-en">Rates</span></div>
       <h2 class="sec-title"><span class="squig">課程費用</span></h2>
-      <p class="sec-lead">以下為每小時參考費用（「+」表示起價）。可切換一對一／一對二，或用標籤快速篩選學習階段。</p>
+      <p class="sec-lead">以下為每小時參考費用（「+」表示起價）。可切換一對一／一對多，或用標籤快速篩選學習階段。</p>
 
       <div class="price-controls">
         <div class="mode-toggle" role="tablist" aria-label="上課人數">
           <button class="mode-btn active" id="mode1" aria-pressed="true">一對一</button>
-          <button class="mode-btn" id="mode2" aria-pressed="false">一對二（每人）</button>
+          <button class="mode-btn" id="mode2" aria-pressed="false">一對多（每人）</button>
         </div>
         <div class="filter-chips" id="filterChips" role="group" aria-label="階段篩選">
           <button class="fchip active" data-stage="all">全部</button>
@@ -1001,6 +1013,7 @@
       </div>
 
       <div class="price-panel" id="panelMode2">
+        <h3 class="group-h">2 人一起上</h3>
         <table class="price-table">
           <thead><tr><th scope="col">課程類型</th><th scope="col">元／小時／人</th></tr></thead>
           <tbody>
@@ -1015,11 +1028,25 @@
             <tr data-stage="cert"><td>SAT、AP</td><td class="val">1,500+</td></tr>
           </tbody>
         </table>
+        <h3 class="group-h">國高中小班（3–4 人）<span class="group-status">籌備中・可先預約</span></h3>
+        <table class="price-table group-table">
+          <thead><tr><th scope="col">每班人數（元／小時／人）</th><th scope="col">國中</th><th scope="col">高中</th></tr></thead>
+          <tbody>
+            <tr data-stage="junior senior"><td>3 人</td><td class="val">800</td><td class="val">900</td></tr>
+            <tr data-stage="junior senior"><td>4 人</td><td class="val">700</td><td class="val">800</td></tr>
+          </tbody>
+        </table>
+        <ul class="group-notes">
+          <li><strong>對象：</strong>國中生以段考與會考為主；高中生以段考與學測為主</li>
+          <li><strong>上課方式：</strong>每週一次，一次 2 小時，每班最多 4 人，同一班同一學習階段</li>
+          <li><strong>教材：</strong>自編講義與考卷</li>
+          <li><strong>報名：</strong>開班時間與地點確定前，可先透過 LINE 登記，確定後優先通知</li>
+        </ul>
       </div>
 
       <div class="price-foot">
         <p><strong>試教：</strong>建議時長 1 小時即可，<strong>依上表的正式鐘點計費、課後結算</strong>，目前沒有試教折扣。</p>
-        <p><strong>一對二：</strong>上表為每人費用；如兩人為不同學習階段，會另行討論。國小一對二僅限到府；高中可開小班：3 人每人 900、4 人每人 800、5–6 人每人 700（每小時，最多 6 人）。</p>
+        <p><strong>一對多：</strong>上表皆為每人費用；2 人如為不同學習階段，會另行討論。國小 2 人僅限到府。</p>
       </div>
     </div>
   </section>
@@ -1077,8 +1104,8 @@
           <div class="faq-a"><div class="faq-a-inner">每次上課後會提供上課內容供複習，並以文字訊息與 Google Sheets 提供具體課程規劃與進度追蹤（可參考上方「教材與規劃實例」），考後也會依答題狀況分析錯誤原因、調整策略。</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">可以一對二上課嗎？</button>
-          <div class="faq-a"><div class="faq-a-inner">可以。一對二為每人計費、費用較一對一低（見費用表）；若兩位學生為不同學習階段，收費會另行討論。</div></div>
+          <button class="faq-q" aria-expanded="false">可以兩人或多人一起上嗎？</button>
+          <div class="faq-a"><div class="faq-a-inner">可以。一對多為每人計費、費用較一對一低（見費用表「一對多」）；2 人各階段都可以，若兩位學生為不同學習階段，收費會另行討論。國高中另有 3–4 人小班（籌備中），每週一次、一次 2 小時，使用自編講義與考卷；開班時間確定前，可先透過 LINE 登記。</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">目前還有時段可以排課嗎？</button>
@@ -1358,20 +1385,16 @@
   });
 
   /* pricing: mode toggle + stage filter */
-  var mode1 = document.getElementById('mode1');
-  var mode2 = document.getElementById('mode2');
-  var panelM1 = document.getElementById('panelMode1');
-  var panelM2 = document.getElementById('panelMode2');
-  function setMode(one){
-    mode1.classList.toggle('active', one);
-    mode2.classList.toggle('active', !one);
-    mode1.setAttribute('aria-pressed', String(one));
-    mode2.setAttribute('aria-pressed', String(!one));
-    panelM1.classList.toggle('active', one);
-    panelM2.classList.toggle('active', !one);
+  var modeBtns = [1,2].map(function(n){ return document.getElementById('mode'+n); });
+  var modePanels = [1,2].map(function(n){ return document.getElementById('panelMode'+n); });
+  function setMode(i){
+    modeBtns.forEach(function(b, k){
+      b.classList.toggle('active', k === i);
+      b.setAttribute('aria-pressed', String(k === i));
+      modePanels[k].classList.toggle('active', k === i);
+    });
   }
-  mode1.addEventListener('click', function(){ setMode(true); });
-  mode2.addEventListener('click', function(){ setMode(false); });
+  modeBtns.forEach(function(b, k){ b.addEventListener('click', function(){ setMode(k); }); });
 
   var chips = Array.prototype.slice.call(document.querySelectorAll('.fchip'));
   function applyFilter(stage){
