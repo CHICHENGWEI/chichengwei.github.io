@@ -63,7 +63,7 @@
   .tag{display:inline-block;font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);margin-bottom:4px;}
   .hint{font-size:13px;color:var(--ink-soft);margin-top:10px;}
   /* message cards */
-  .msgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
+  .msgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start;}
   .msg{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;box-shadow:var(--shadow-sm);}
   .msg .tag{color:var(--red);}
   .msg h3{font-family:var(--f-disp);font-size:17px;margin:0 0 4px;color:var(--ink-deep);}
@@ -71,6 +71,8 @@
   .bubble{background:#E9F7E2;border-radius:4px 16px 16px 16px;padding:12px 14px;font-size:14.5px;line-height:1.8;}
   .bubble p{margin:0 0 8px;}
   .bubble p:last-child{margin:0;}
+  .msgshot a.shot{background:#fff;}
+  .msgshot a.shot img{width:100%;height:auto;}
   .note{font-size:13px;color:var(--ink-soft);margin-top:18px;}
   footer{border-top:1px solid var(--line-soft);padding:28px 0 40px;font-size:14px;color:var(--ink-soft);}
   footer a{color:var(--ink);}
@@ -99,7 +101,7 @@
   <div class="wrap hero">
     <p class="eyebrow">PORTFOLIO</p>
     <h1>英文教材設計與命題作品集</h1>
-    <p class="lead">我是紀承緯（Baxter Chi），臺大外國語文學系學生，2023 年起擔任英文家教，教學對象從國小到高中與成人。這一頁整理我自己編寫的題本、講義與課程規劃，以及實際傳給家長的訊息；所有材料都是節錄，訊息已移除姓名、學校、日期等可辨識資訊。</p>
+    <p class="lead">我是紀承緯（Baxter Chi），臺大外國語文學系學生，2023 年起擔任英文家教，教學對象從國小到高中與成人。這一頁整理我自己編寫的題本、講義與課程規劃，以及實際傳出的訊息截圖；所有材料都是節錄，訊息已遮去姓名、日期等可辨識資訊。</p>
     <ul class="facts">
       <li>TOEIC 980</li>
       <li>IELTS 8.0（聽、讀 9.0）</li>
@@ -152,53 +154,29 @@
 
   <section id="messages">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-num">03</span><h2>家長溝通</h2></div>
-      <p class="sec-lead">實際傳給家長的訊息節錄。姓名以○○代替，學校、日期與其他可辨識資訊已移除，刪節處以「……」標示。</p>
+      <div class="sec-head"><span class="sec-num">03</span><h2>家長與學生溝通</h2></div>
+      <p class="sec-lead">實際傳出的 LINE 訊息截圖。學生姓名、日期、連結與其他可辨識資訊已用對話框底色遮去，只保留我送出的那則。</p>
       <div class="msgs">
-        <article class="msg">
-          <span class="tag">課程規劃信</span>
-          <h3>升高一暑假：三年的英文怎麼排</h3>
-          <p class="why">把文法、單字、段考、作文、檢定拆成有時間點的計畫，家長一次看懂接下來要做什麼。</p>
-          <div class="bubble">
-            <p>課程規劃如下，每堂課會有明確的進度和回家作業：</p>
-            <p>目前已教完高一上 L1 至 L5 的文法，預計暑假結束前可以教完高一上、下共 18 課的文法，因為大多都是國中的內容再多一些補充，除了分詞構句及虛主詞、虛受詞用法。高一結束前，在確保能夠吸收的前提下，教完至少高中一至三冊的文法（學測範圍到第五冊）。</p>
-            <p>單字部分總共 6000 單（大考中心公布），暑假期間一週至少一面（135 個單字），開學期間減半，大概在高二上結束前會背完 6000 單。</p>
-            <p>剩下的聽力、課文、片語或學校的雜誌內容、老師補充或翻譯等，會於每次段考前確認知曉指定範圍內全部內容；作文會在高二下開始訓練。</p>
-            <p>多益的題目練習，目前規劃兩個月一份（聽力 100 題、閱讀 100 題），在高一文法建立完之後開始，高二下提高頻率。都可以再討論！</p>
-          </div>
-        </article>
-        <article class="msg">
-          <span class="tag">事後補答</span>
-          <h3>上課沒解決的題目，當晚補上</h3>
-          <p class="why">課堂上卡住的一題，想清楚後當天就補充解法，請家長轉知學生。</p>
-          <div class="bubble">
-            <p>○○媽媽您好，今天上課有一題當下沒有解決，我現在想出來了，想請媽媽轉知○○：</p>
-            <p>whether 跟 either 那題要用句意解決，不能用文法，畢竟兩個字都有連接詞詞性。如果用 whether，強調的是「無論」，可能有第三種、第四種方式，但原文只寫出兩種；如果用 either，就只有原文的那兩種方式……</p>
-            <p>如果還有不懂的我們下禮拜解決。</p>
-          </div>
-        </article>
-        <article class="msg">
-          <span class="tag">考後里程碑信</span>
-          <h3>會考考完：回顧與下一階段</h3>
-          <p class="why">大考結束後先肯定學生的努力，再說明下一階段的安排與學生目前的學習狀況。</p>
-          <div class="bubble">
-            <p>○○媽媽您好，首先恭喜○○考完會考，也許可以稍微休息一下！很高興有這份榮幸在這段期間指導○○的英文科，○○很認真也很努力，希望不管考試結果如何，他在這段期間都是有所成長的。</p>
-            <p>課程規劃：在開學前會是銜接和先修內容，開學後會以段考為主。有些家長會希望學生在高中階段有餘力的話兼顧英檢或多益，不過每個人需求不同，提供給媽媽參考。</p>
-            <p>……○○目前的英文學習狀況，可能是不想背單字、要有人盯，或有些時候不太理解答案的根本原因……</p>
-            <p>高中階段其實大概只有兩年，會鼓勵○○如果兼顧得了課業，也可以盡可能充實自身經驗，對申請入學有直接幫助。……</p>
-          </div>
-        </article>
-        <article class="msg">
-          <span class="tag">檢定路徑建議</span>
-          <h3>劍橋英檢之後，還要考什麼？</h3>
-          <p class="why">依台灣升學或國外升學兩條路，整理各檢定的用途與效期，給出現階段的具體目標。</p>
-          <div class="bubble">
-            <p>○○媽媽您好，關於前天提及除了劍橋英檢後還能參加的考試，會需要考量○○之後是在台灣升學，或是往國外升學。</p>
-            <p>如果在台灣升學：升學主軸會是國中會考與高中學測，檢定部分走到 FCE（約等同全民英檢中高級）即已足夠，證書可放入升學備審資料……多益偏職場英文，且成績效期只有兩年，會是大學畢業門檻與求職階段才需要準備的。</p>
-            <p>如果往國外升學：劍橋語檢可以繼續往上考 CAE（C1）與 CPE（C2）；托福與雅思的成績效期為兩年，會在實際申請前兩年內報考才具效力……</p>
-            <p>不過因為劍橋系列的證書終身有效，PET 到 FCE 這一段是國內或國外升學都會用到的，所以目前規劃先以 PET、FCE 為目標，升學方向到國中選校時再確定即可，先前的準備都不會浪費。</p>
-          </div>
-        </article>
+        <figure class="msgshot">
+          <a class="shot" href="img/msg-course-plan.jpg" target="_blank" rel="noopener"><picture><source srcset="img/msg-course-plan.webp" type="image/webp"><img src="img/msg-course-plan.jpg" alt="課程規劃信：升高一暑假：三年的英文怎麼排（LINE 訊息截圖，已遮去個人資料）" loading="lazy" width="730" height="880"></picture></a>
+          <figcaption><span class="tag">課程規劃信</span><b>升高一暑假：三年的英文怎麼排</b>把文法、單字、段考、作文、多益拆成有時間點的計畫，讓家長一次看懂接下來要做什麼。</figcaption>
+        </figure>
+        <figure class="msgshot">
+          <a class="shot" href="img/msg-lesson-feedback.jpg" target="_blank" rel="noopener"><picture><source srcset="img/msg-lesson-feedback.webp" type="image/webp"><img src="img/msg-lesson-feedback.jpg" alt="課後回饋：回報進度，也回報上課狀況（LINE 訊息截圖，已遮去個人資料）" loading="lazy" width="735" height="427"></picture></a>
+          <figcaption><span class="tag">課後回饋</span><b>回報進度，也回報上課狀況</b>家長問起學習狀況時，除了進度，也說明觀察到的問題和接下來的調整方式。</figcaption>
+        </figure>
+        <figure class="msgshot">
+          <a class="shot" href="img/msg-followup-answer.jpg" target="_blank" rel="noopener"><picture><source srcset="img/msg-followup-answer.webp" type="image/webp"><img src="img/msg-followup-answer.jpg" alt="事後補答：上課沒解決的題目，當晚補上（LINE 訊息截圖，已遮去個人資料）" loading="lazy" width="730" height="605"></picture></a>
+          <figcaption><span class="tag">事後補答</span><b>上課沒解決的題目，當晚補上</b>課堂上卡住的一題，想清楚後當天就補上解法，請家長轉知學生。</figcaption>
+        </figure>
+        <figure class="msgshot">
+          <a class="shot" href="img/msg-ielts-goals.jpg" target="_blank" rel="noopener"><picture><source srcset="img/msg-ielts-goals.webp" type="image/webp"><img src="img/msg-ielts-goals.jpg" alt="目標拆解：雅思：先拆出各科目標分數（LINE 訊息截圖，已遮去個人資料）" loading="lazy" width="730" height="536"></picture></a>
+          <figcaption><span class="tag">目標拆解</span><b>雅思：先拆出各科目標分數</b>先說明紙筆考轉機考的影響，再把總分目標拆成聽讀、說寫兩組，寫出練習重點。</figcaption>
+        </figure>
+        <figure class="msgshot">
+          <a class="shot" href="img/msg-exam-checklist.jpg" target="_blank" rel="noopener"><picture><source srcset="img/msg-exam-checklist.webp" type="image/webp"><img src="img/msg-exam-checklist.jpg" alt="考前提醒：段考前一週：只列三件事（LINE 訊息截圖，已遮去個人資料）" loading="lazy" width="720" height="401"></picture></a>
+          <figcaption><span class="tag">考前提醒</span><b>段考前一週：只列三件事</b>直接傳給學生的考前清單：錯題重看、模擬卷做完、上課沒答出來的單字複習。</figcaption>
+        </figure>
       </div>
     </div>
   </section>
