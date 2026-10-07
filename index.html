@@ -342,6 +342,10 @@
   .gallery-certs .g-item img{border:1px solid var(--line);}
 
   /* ---------- sample course plan table ---------- */
+  .gallery-plans{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:40px 26px;}
+  .gallery-plans .g-no{font-family:var(--f-body);font-size:.78rem;font-weight:700;transform:rotate(2deg);top:-14px;right:-6px;padding:0 6px;background:var(--paper);}
+  .more-link{color:var(--red);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor;margin-left:6px;}
+
 
   /* ---------- sub-block headings inside a section ---------- */
   .block-head{margin:64px 0 8px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;}
@@ -886,26 +890,37 @@
 
       <div class="block-head">
         <span class="block-no">B</span>
-        <h3>課程規劃與進度追蹤</h3>
+        <h3>課程規劃與進度追蹤：每個階段不一樣</h3>
       </div>
-      <p class="block-sub">每位學生一份，逐週記錄上課內容、複習範圍與作業，以 Google Sheets 與家長共享。</p>
+      <p class="block-sub">每位學生一份規劃表，以 Google Sheets 與家長共享。不同階段要顧的事不一樣，以下各挑一份實際使用的規劃表（姓名、日期、書名已移除）。</p>
 
-      <div class="gallery gallery-b">
-
-        <button class="g-item" data-cap="學測前一年英文逐週進度表：單字、文法、翻譯作文、模考與歷屆試題排在同一張表">
-          <span class="g-no">sample 04</span>
+      <div class="gallery gallery-plans">
+        <button class="g-item" data-cap="國小・雙語／國際學校｜兩人同堂：劍橋檢定＋學校科目：學校的 Science、Math 跟上，同時準備劍橋檢定；每堂記小考分數">
+          <span class="g-no">國小・雙語／國際學校</span>
+          <picture><source srcset="portfolio/img/plan-two-students.webp" type="image/webp"><img src="portfolio/img/plan-two-students.jpg" alt="兩位學生同一堂：學校科目與劍橋檢定並行的規劃表" width="1600" height="1093" loading="lazy" decoding="async"></picture>
+          <p class="g-cap">兩人同堂：劍橋檢定＋學校科目</p>
+          <p class="g-sub">學校的 Science、Math 跟上，同時準備劍橋檢定；每堂記小考分數</p>
+        </button>
+        <button class="g-item" data-cap="國小高年級・美式課程｜整學期事先排好：開學前排好 19 週：每堂閱讀有技能焦點，考前複習、考後檢討">
+          <span class="g-no">國小高年級・美式課程</span>
+          <picture><source srcset="portfolio/img/plan-semester-g6.webp" type="image/webp"><img src="portfolio/img/plan-semester-g6.jpg" alt="六年級美式課程整學期規劃表" width="1600" height="1528" loading="lazy" decoding="async"></picture>
+          <p class="g-cap">整學期事先排好</p>
+          <p class="g-sub">開學前排好 19 週：每堂閱讀有技能焦點，考前複習、考後檢討</p>
+        </button>
+        <button class="g-item" data-cap="國中・段考與會考｜會考路線圖＋段考前檢核清單：從國二暑假排到會考，段考前整理這位學生自己的錯點">
+          <span class="g-no">國中・段考與會考</span>
+          <picture><source srcset="portfolio/img/plan-cap-roadmap.webp" type="image/webp"><img src="portfolio/img/plan-cap-roadmap.jpg" alt="國二到國三的會考路線圖與段考前檢核清單" width="1600" height="964" loading="lazy" decoding="async"></picture>
+          <p class="g-cap">會考路線圖＋段考前檢核清單</p>
+          <p class="g-sub">從國二暑假排到會考，段考前整理這位學生自己的錯點</p>
+        </button>
+        <button class="g-item" data-cap="高中・學測｜學測前一年逐週進度表：單字、文法、作文、模考排在同一張表">
+          <span class="g-no">高中・學測</span>
           <picture><source srcset="portfolio/img/plan-gsat-weekly.webp" type="image/webp"><img src="portfolio/img/plan-gsat-weekly.jpg" alt="學測前一年英文逐週進度表" width="1600" height="1578" loading="lazy" decoding="async"></picture>
-          <p class="g-cap">學測進度表</p>
-          <p class="g-sub">單字・文法・作文・模考逐週排定</p>
-        </button>
-        <button class="g-item" data-cap="高中英文 18 週課程骨架：一週一課、每次 2 小時，三輪各 6 週，含複習與模擬考">
-          <span class="g-no">sample 05</span>
-          <picture><source srcset="portfolio/img/plan-18-weeks.webp" type="image/webp"><img src="portfolio/img/plan-18-weeks.jpg" alt="高中英文 18 週課程骨架" width="1600" height="996" loading="lazy" decoding="async"></picture>
-          <p class="g-cap">18 週課程骨架</p>
-          <p class="g-sub">一週一課・每週 120 分鐘怎麼排</p>
+          <p class="g-cap">學測前一年逐週進度表</p>
+          <p class="g-sub">單字、文法、作文、模考排在同一張表</p>
         </button>
       </div>
-      <p class="g-hint">＊依實際使用的規劃表重新整理，書名、日期改為通用寫法。</p>
+      <p class="g-hint">＊點擊可放大。<a class="more-link" href="/portfolio/#planning">看全部 14 份規劃實例（依國小、國中、高中、檢定分類）→</a></p>
 
       <div class="block-head">
         <span class="block-no">C</span>
@@ -1226,7 +1241,7 @@
 
 <footer class="site-footer grid-paper">
   <svg class="foot-seal" viewBox="0 0 100 100" aria-hidden="true"><rect x="7" y="7" width="86" height="86" rx="15" fill="none" stroke="#C43227" stroke-width="7"/><text x="50" y="69" font-size="46" text-anchor="middle" fill="#C43227" font-family="'Zhi Mang Xing',serif">紀</text></svg>
-  <p>© 2026 紀承緯 CHI, CHENG-WEI｜國立臺灣大學外國語文學系</p>
+  <p>© 2026 BaxterEnglish（紀承緯）｜國立臺灣大學外國語文學系</p>
   <p class="foot-tags">#徵學生　#全英文授課為主　#學測英文衝刺　#會考英文複習　#文法全解　#台大外文</p>
 </footer>
 
