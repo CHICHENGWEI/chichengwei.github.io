@@ -86,6 +86,11 @@
     .hero{padding-top:36px;padding-bottom:20px;}
     section{padding:32px 0;}
   }
+  .stage-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px;padding:0;}
+  .stage-nav a{font-size:14px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--card);color:var(--ink);}
+  .stage-nav a:hover{border-color:var(--red);color:var(--red);}
+  .stage-h{font-family:var(--f-disp);font-size:20px;color:var(--ink-deep);margin:30px 0 14px;display:flex;align-items:center;gap:10px;scroll-margin-top:70px;}
+  .stage-h span{font-family:var(--f-mono);font-size:12px;color:var(--red);border:1px solid var(--red);border-radius:999px;padding:1px 8px;}
 </style>
 </head>
 <body>
@@ -116,7 +121,7 @@
   <section id="materials">
     <div class="wrap">
       <div class="sec-head"><span class="sec-num">01</span><h2>教材與命題</h2></div>
-      <p class="sec-lead">題目、例句與解析都是自己寫的。每張圖是一頁節錄，點開看原尺寸。</p>
+      <p class="sec-lead">每張圖是一頁節錄，圖說寫這一頁怎麼設計；點開看原尺寸。</p>
       <div class="grid">
         <figure>
           <a class="shot" href="img/grammar-participle-teacher.jpg" target="_blank" rel="noopener"><picture><source srcset="img/grammar-participle-teacher.webp" type="image/webp"><img src="img/grammar-participle-teacher.jpg" alt="分詞文法題本教師版的一頁：每題標出考點與級別，三個誘答各附錯因" loading="lazy" width="1200" height="1552"></picture></a>
@@ -124,7 +129,7 @@
         </figure>
         <figure>
           <a class="shot" href="img/vocab-senior-l1.jpg" target="_blank" rel="noopener"><picture><source srcset="img/vocab-senior-l1.webp" type="image/webp"><img src="img/vocab-senior-l1.jpg" alt="高中單字總整理第一級的一頁：分級、詞性標記、學測年份、例句與辨析" loading="lazy" width="1200" height="1696"></picture></a>
-          <figcaption><span class="tag">講義・單字</span><b>高中單字總整理（第一級）</b>依大考中心參考詞彙分級，每個字標出可數／不可數、及物／不及物與學測出現年份，例句、搭配與易混字辨析全部自編。</figcaption>
+          <figcaption><span class="tag">講義・單字</span><b>高中單字總整理（第一級）</b>依大考中心參考詞彙分級，每個字標出可數／不可數、及物／不及物與學測出現年份，並附例句、搭配與易混字辨析。</figcaption>
         </figure>
         <figure>
           <a class="shot" href="img/grammar-sense-verbs.jpg" target="_blank" rel="noopener"><picture><source srcset="img/grammar-sense-verbs.webp" type="image/webp"><img src="img/grammar-sense-verbs.jpg" alt="高中文法總整理的感官動詞一頁：公式與正誤對照" loading="lazy" width="1200" height="1552"></picture></a>
@@ -154,6 +159,8 @@
     <div class="wrap">
       <div class="sec-head"><span class="sec-num">02</span><h2>課程規劃</h2></div>
       <p class="sec-lead">每位學生的進度都排成表格，和家長、學生共用；長期目標拆成每週做得到的量。以下節錄自實際使用的規劃表，重畫成表格：姓名、日期、書名都已移除，週次從第一堂課起算。</p>
+      <p class="stage-nav"><a href="#plan-elem">國小・雙語／國際學校・劍橋檢定</a><a href="#plan-junior">國中・段考與會考</a><a href="#plan-senior">高中・段考與學測</a><a href="#plan-cert">檢定・留學</a></p>
+      <h3 class="stage-h" id="plan-elem">國小・雙語／國際學校・劍橋檢定<span>4</span></h3>
       <div class="grid wide">
         <figure>
           <a class="shot" href="img/plan-two-students.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-two-students.webp" type="image/webp"><img src="img/plan-two-students.jpg" alt="雙人分流課程規劃：劍橋英檢與學校科目並行" loading="lazy" width="1600" height="1093"></picture></a>
@@ -164,21 +171,35 @@
           <figcaption><span class="tag">學期規劃</span><b>六年級美式課程：整學期事先排好</b>開學前就排好 19 週：每堂閱讀有技能焦點，單字用複習循環推進，文法拆成子題；考前複習、考後檢討，學校活動多的那週課程放輕。表格是英文。</figcaption>
         </figure>
         <figure>
-          <a class="shot" href="img/plan-two-grades.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-two-grades.webp" type="image/webp"><img src="img/plan-two-grades.jpg" alt="國二與國一同堂分流的進度表" loading="lazy" width="1600" height="955"></picture></a>
-          <figcaption><span class="tag">雙人分流</span><b>同一堂、兩個年級：國二與國一分流</b>兩位學生同時段上課，各用自己學校版本的講義。進度記到頁數、第幾個單字，作業寫到題號，期限改了也記下來，給家長的提醒另開一欄。</figcaption>
+          <a class="shot" href="img/plan-flyers.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-flyers.webp" type="image/webp"><img src="img/plan-flyers.jpg" alt="Flyers 備考：四線並行" loading="lazy" width="1600" height="1264"></picture></a>
+          <figcaption><span class="tag">檢定備考</span><b>Flyers 備考：四線並行</b>把一場檢定拆成四條各有終點的進度線同時推進，全部跑完再用真題模考收尾，考完接回學校課本。</figcaption>
         </figure>
         <figure>
           <a class="shot" href="img/plan-phonics.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-phonics.webp" type="image/webp"><img src="img/plan-phonics.jpg" alt="自然發音暑期課的作業與分數紀錄" loading="lazy" width="1600" height="905"></picture></a>
           <figcaption><span class="tag">進度表</span><b>自然發音暑期課：作業、測驗範圍、分數</b>每堂指定下次要交的練習本單元，測驗範圍寫到發音主題，分數逐堂記錄（含加分，所以會超過 100）；開學後改成口頭測驗。</figcaption>
         </figure>
-        <figure>
-          <a class="shot" href="img/plan-tracking.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-tracking.webp" type="image/webp"><img src="img/plan-tracking.jpg" alt="高一先修的作業完成狀況與成績追蹤表" loading="lazy" width="1600" height="890"></picture></a>
-          <figcaption><span class="tag">追蹤</span><b>高一先修：作業、完成狀況、成績分欄追蹤</b>每項作業旁一欄記完成狀況，計畫和實際分開記；模考、單字小考都記分數，沒完成的下週追、補完再註記。</figcaption>
-        </figure>
+      </div>
+      <h3 class="stage-h" id="plan-junior">國中・段考與會考<span>4</span></h3>
+      <div class="grid wide">
         <figure>
           <a class="shot" href="img/plan-cap-roadmap.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-cap-roadmap.webp" type="image/webp"><img src="img/plan-cap-roadmap.jpg" alt="國二到國三的會考路線圖與段考前檢核清單" loading="lazy" width="1600" height="964"></picture></a>
           <figcaption><span class="tag">路線圖</span><b>國二到國三：會考路線圖與段考前檢核清單</b>從國二暑假排到會考，每個階段有單字配額與模考檢核點；段考前一週，把這位學生自己錯過的地方整理成一張清單。</figcaption>
         </figure>
+        <figure>
+          <a class="shot" href="img/plan-two-grades.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-two-grades.webp" type="image/webp"><img src="img/plan-two-grades.jpg" alt="國二與國一同堂分流的進度表" loading="lazy" width="1600" height="955"></picture></a>
+          <figcaption><span class="tag">雙人分流</span><b>同一堂、兩個年級：國二與國一分流</b>兩位學生同時段上課，各用自己學校版本的講義。進度記到頁數、第幾個單字，作業寫到題號，期限改了也記下來，給家長的提醒另開一欄。</figcaption>
+        </figure>
+        <figure>
+          <a class="shot" href="img/plan-spiral-grammar.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-spiral-grammar.webp" type="image/webp"><img src="img/plan-spiral-grammar.jpg" alt="國中文法：新章＋舊章螺旋複習" loading="lazy" width="1600" height="1747"></picture></a>
+          <figcaption><span class="tag">文法雙軌</span><b>國中文法：新章＋舊章螺旋複習</b>同一堂課同時推進新章與回頭複習舊章，作業要求寫出每題的講義解釋頁數，再用對應章節的累積複習卷驗收。</figcaption>
+        </figure>
+        <figure>
+          <a class="shot" href="img/plan-bridge.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-bridge.webp" type="image/webp"><img src="img/plan-bridge.jpg" alt="一年三線：會考考古 → 學測考古 → 6000 字" loading="lazy" width="1600" height="1115"></picture></a>
+          <figcaption><span class="tag">國高銜接</span><b>一年三線：會考考古 → 學測考古 → 6000 字</b>把文法、單字、閱讀三條線排進 53 週：國中內容先收尾，交接週同時換文法題源與字表，換成高中字表後每週改背 100 字，並保留模考取代當週作業的彈性。</figcaption>
+        </figure>
+      </div>
+      <h3 class="stage-h" id="plan-senior">高中・段考與學測<span>5</span></h3>
+      <div class="grid wide">
         <figure>
           <a class="shot" href="img/plan-gsat-weekly.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-gsat-weekly.webp" type="image/webp"><img src="img/plan-gsat-weekly.jpg" alt="學測前一年英文逐週進度表" loading="lazy" width="1600" height="1578"></picture></a>
           <figcaption><span class="tag">進度表</span><b>學測前一年・英文逐週進度表</b>把單字、文法總複習、翻譯作文、模考與歷屆試題排進同一張逐週表：單字每週加 200 字、從 2,000 字累積到 6,000 字，最後一個月留給歷屆學測。</figcaption>
@@ -186,6 +207,25 @@
         <figure>
           <a class="shot" href="img/plan-18-weeks.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-18-weeks.webp" type="image/webp"><img src="img/plan-18-weeks.jpg" alt="高中英文 18 週課程骨架與每週 120 分鐘的時間分配" loading="lazy" width="1600" height="996"></picture></a>
           <figcaption><span class="tag">課程設計</span><b>高中英文 18 週課程骨架</b>一冊課本一學期：三輪各 6 週（三課、一堂複習課、總複習、模擬考），每週 120 分鐘怎麼分配、回家作業是什麼都事先排定。</figcaption>
+        </figure>
+        <figure>
+          <a class="shot" href="img/plan-tracking.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-tracking.webp" type="image/webp"><img src="img/plan-tracking.jpg" alt="高一先修的作業完成狀況與成績追蹤表" loading="lazy" width="1600" height="890"></picture></a>
+          <figcaption><span class="tag">追蹤</span><b>高一先修：作業、完成狀況、成績分欄追蹤</b>每項作業旁一欄記完成狀況，計畫和實際分開記；模考、單字小考都記分數，沒完成的下週追、補完再註記。</figcaption>
+        </figure>
+        <figure>
+          <a class="shot" href="img/plan-spaced.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-spaced.webp" type="image/webp"><img src="img/plan-spaced.jpg" alt="講完兩週後再考" loading="lazy" width="1600" height="1218"></picture></a>
+          <figcaption><span class="tag">間隔提取</span><b>講完兩週後再考</b>每兩課合成一次小考、在講完約兩週後才考，搭配題本、錯題複習與段考目標分數，讓一學期的進度與複習時機在一張表上排好。</figcaption>
+        </figure>
+        <figure>
+          <a class="shot" href="img/plan-strategy.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-strategy.webp" type="image/webp"><img src="img/plan-strategy.jpg" alt="暑假先修到段考節奏" loading="lazy" width="1600" height="1342"></picture></a>
+          <figcaption><span class="tag">升高一銜接</span><b>暑假先修到段考節奏</b>從暑假字根、官方字表到課本先修，再接上學校段考進度；作業分基礎與進階兩層交替，並把每次段考設為調整策略的檢查點。</figcaption>
+        </figure>
+      </div>
+      <h3 class="stage-h" id="plan-cert">檢定・留學<span>1</span></h3>
+      <div class="grid wide">
+        <figure>
+          <a class="shot" href="img/plan-ielts.jpg" target="_blank" rel="noopener"><picture><source srcset="img/plan-ielts.webp" type="image/webp"><img src="img/plan-ielts.jpg" alt="聽讀固定節奏＋寫作鷹架" loading="lazy" width="1600" height="1433"></picture></a>
+          <figcaption><span class="tag">雅思</span><b>聽讀固定節奏＋寫作鷹架</b>聽力與閱讀每堂固定份量、照冊次往下推，寫作從段落結構到 thesis、paraphrase 一步一步搭，每步都對應一篇作文作業。</figcaption>
         </figure>
       </div>
     </div>
@@ -224,7 +264,7 @@
 <footer>
   <div class="wrap">
     <p>聯絡：<a href="mailto:baxterenglish.ai@gmail.com">baxterenglish.ai@gmail.com</a>　｜　<a href="/">BaxterEnglish 首頁</a></p>
-    <p>頁面上的教材圖片僅供展示，請勿轉載。© 紀承緯 Baxter Chi</p>
+    <p>頁面上的教材圖片僅供展示，請勿轉載。© 2026 BaxterEnglish（紀承緯）</p>
   </div>
 </footer>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "dba28c8ccc004cefb7e60543c79aeb7e"}'></script><!-- End Cloudflare Web Analytics -->
