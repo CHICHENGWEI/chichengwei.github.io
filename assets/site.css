@@ -280,3 +280,33 @@ dialog.lb button{position:fixed;top:12px;right:12px;width:48px;height:48px;borde
 .ask-side img{width:160px;height:160px;image-rendering:pixelated}
 .ask-side p{font-size:14.5px;color:var(--ink-3);line-height:1.7}
 @media (max-width:860px){.ask-wrap{grid-template-columns:minmax(0,1fr)}.ask-side{position:static}}
+.field.other{flex-basis:100%;max-width:420px}
+
+/* ---------- 首頁：教材拼貼與入口縮圖 ---------- */
+.hero.home{padding-top:clamp(40px,6vw,72px);padding-bottom:0}
+.hero .wrap.collage-wrap{display:block;margin-top:clamp(36px,5vw,56px)}
+.collage{width:100%}
+.collage{position:relative;height:clamp(300px,42vw,540px);background:var(--bg-2);border-radius:28px;overflow:hidden}
+.collage .pc{position:absolute;height:auto;background:#fff;border-radius:6px;border:1px solid rgba(17,18,20,.08);box-shadow:0 1px 2px rgba(17,18,20,.06)}
+.collage .pc1{width:36%;left:3%;top:30%}
+.collage .pc2{width:21%;left:27%;top:12%}
+.collage .pc3{width:24%;left:38%;top:6%;z-index:3}
+.collage .pc4{width:20%;left:57%;top:14%;z-index:2}
+.collage .pc5{width:23%;left:73%;top:26%;z-index:4}
+.collage-cap{text-align:center;font-size:clamp(15px,1.4vw,17px);color:var(--ink-3);margin:20px 0 0}
+@media (max-width:620px){
+  .collage{height:300px;border-radius:18px}
+  .collage .pc1{display:none}
+  .collage .pc2{width:40%;left:4%;top:12%}
+  .collage .pc3{width:44%;left:28%;top:6%}
+  .collage .pc4{display:none}
+  .collage .pc5{width:42%;left:55%;top:30%}
+}
+.door.has-img{padding-top:0;overflow:hidden}
+.door-img{display:block;margin:0 -26px 14px;height:150px;overflow:hidden;background:#e9ebee;border-bottom:1px solid var(--line)}
+.door.dark .door-img{background:#1c1d20;border-bottom-color:#2a2c30}
+.door-img img{width:100%;height:100%;object-fit:cover;object-position:top center}
+@media (max-width:620px){
+  .door.has-img{padding-top:0}
+  .door-img{flex-basis:100%;margin:0 -20px 10px;height:120px;order:-1}
+}

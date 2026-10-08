@@ -1,4 +1,4 @@
-// BaxterEnglish：手機選單＋圖片放大
+// BaxterEnglish：手機選單＋圖片放大＋30 秒填表
 (function () {
   var btn = document.querySelector('.menu-btn');
   var nav = document.getElementById('site-nav');
@@ -31,28 +31,42 @@
   });
 })();
 
-// 30 秒填表：組成 LINE 訊息（https://line.me/R/oaMessage/{ID}/?{text}）
+// 30 秒填表（規格：改版研究/各頁內容/09_詢問表單.md）
+// 手機：用 LINE 送出（https://line.me/R/oaMessage/{ID}/?{text}，電腦版 LINE 不支援）
+// 電腦：送到 Google 表單（baxterenglish.ai 名下），回應讀不到，送出後直接顯示成功
 (function () {
-  var LINE_ID = '@baxter_english', MAIL = 'baxterenglish.ai@gmail.com';
+  var LINE_ID = '@baxter_english';
+  var GFORM = 'https://docs.google.com/forms/d/e/1FAIpQLSetUfvZU6vPNhNftes2ffCBdlb_N-O1ip2ShTxzbmeAnsztQQ/formResponse';
+  var F_TEXT = 'entry.1126643972', F_CONTACT = 'entry.1447770098', F_FROM = 'entry.2090958783';
   var mobile = window.matchMedia('(pointer: coarse)').matches || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
   document.querySelectorAll('form.ask').forEach(function (f) {
-    var vals = function (n) { return [].slice.call(f.querySelectorAll('[name="' + n + '"]:checked')).map(function (i) { return i.value; }); };
     var val = function (n) { var e = f.querySelector('[name="' + n + '"]'); return e ? e.value.trim() : ''; };
+    var vals = function (n) {
+      return [].slice.call(f.querySelectorAll('[name="' + n + '"]:checked')).map(function (i) {
+        if (i.value !== '其他') return i.value;
+        var t = val(n + '_other'); return t ? '其他：' + t : '其他';
+      });
+    };
     var schoolBox = f.querySelector('[data-show="school"]'), distBox = f.querySelector('[data-show="district"]');
     var err = f.querySelector('.ask-err'), done = f.querySelector('.ask-done');
-    var lineBtn = f.querySelector('.ask-line'), copyBtn = f.querySelector('.ask-copy');
-    (mobile ? lineBtn : copyBtn).classList.add('primary');
-    if (!mobile) { lineBtn.parentNode.insertBefore(copyBtn, lineBtn); }
+    var lineBtn = f.querySelector('.ask-line'), sendBtn = f.querySelector('.ask-send');
+    (mobile ? lineBtn : sendBtn).classList.add('primary');
+    if (mobile) { sendBtn.parentNode.insertBefore(lineBtn, sendBtn); }
 
     function sync() {
-      var st = vals('stage')[0] || '';
+      var st = (f.querySelector('[name="stage"]:checked') || {}).value || '';
       schoolBox.hidden = !st || st === '幼兒園大班' || st === '大學' || st === '成人';
       var m = vals('mode');
       distBox.hidden = !(m.indexOf('到府') > -1 || m.indexOf('咖啡廳') > -1);
+      f.querySelectorAll('[data-other-for]').forEach(function (box) {
+        var on = f.querySelector('input[data-other="' + box.getAttribute('data-other-for') + '"]').checked;
+        box.hidden = !on;
+      });
     }
     f.addEventListener('change', sync);
 
-    // 從哪一頁點進來，就先勾好那個階段或項目
+    // 從哪一頁點進來：from 寫進訊息第一行；goal 先勾好（例：高中小班登記）
     var qs = new URLSearchParams(location.search);
     var pre = qs.get('goal'), from = qs.get('from');
     if (pre) {
@@ -82,11 +96,13 @@
       if (!vals('mode').length) miss.push('上課方式');
       if (!vals('slot').length) miss.push('方便的時段');
       if (!val('who')) miss.push('怎麼稱呼');
+      if (how === 'send' && !val('contact')) miss.push('聯絡方式（LINE ID、電話或 Email）');
       return miss;
     }
+
     f.addEventListener('submit', function (e) {
       e.preventDefault();
-      var how = (e.submitter && e.submitter.value) || (mobile ? 'line' : 'copy');
+      var how = (e.submitter && e.submitter.value) || (mobile ? 'line' : 'send');
       var miss = check(how);
       done.hidden = true;
       if (miss.length) { err.textContent = '還沒填：' + miss.join('、'); err.hidden = false; return; }
@@ -94,13 +110,20 @@
       var text = message();
       if (how === 'line') {
         location.href = 'https://line.me/R/oaMessage/' + encodeURIComponent(LINE_ID) + '/?' + encodeURIComponent(text);
-      } else if (how === 'mail') {
-        location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('家教課程詢問（網站表單）') + '&body=' + encodeURIComponent(text);
-      } else {
-        var ok = function () { done.textContent = '已複製。請貼到 LINE（@baxter_english）或 Email 傳給我，一天內回覆。'; done.hidden = false; };
-        if (navigator.clipboard) { navigator.clipboard.writeText(text).then(ok, function () { window.prompt('請複製這段訊息：', text); }); }
-        else { window.prompt('請複製這段訊息：', text); }
+        return;
       }
+      var body = new URLSearchParams();
+      body.append(F_TEXT, text);
+      body.append(F_CONTACT, val('contact'));
+      body.append(F_FROM, location.pathname + (from ? '（' + from + '）' : ''));
+      sendBtn.disabled = true; sendBtn.textContent = '送出中…';
+      fetch(GFORM, { method: 'POST', mode: 'no-cors', body: body }).then(function () {
+        done.textContent = '已收到，一天內會用你留的聯絡方式回覆。急的話也可以直接加 LINE @baxter_english。';
+        done.hidden = false; sendBtn.textContent = '已送出';
+      }, function () {
+        err.textContent = '送出失敗，請改用「用 LINE 送出」，或直接加 LINE @baxter_english。';
+        err.hidden = false; sendBtn.disabled = false; sendBtn.textContent = '送出';
+      });
     });
   });
 })();
