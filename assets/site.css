@@ -235,7 +235,7 @@ td.n{font-weight:600}
 
 /* ---------- 頁尾 ---------- */
 .site-footer{border-top:1px solid var(--line);padding:40px 0 48px;font-size:13.5px;color:var(--muted)}
-.foot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-bottom:32px}
+.foot-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px;margin-bottom:32px}
 .foot-grid h2{font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .foot-grid ul{display:flex;flex-direction:column;gap:8px}
 .foot-grid a{color:var(--ink-3)}
@@ -310,3 +310,79 @@ dialog.lb button{position:fixed;top:12px;right:12px;width:48px;height:48px;borde
   .door.has-img{padding-top:0}
   .door-img{flex-basis:100%;margin:0 -20px 10px;height:120px;order:-1}
 }
+
+/* ---------- 互動：滑過、按下、捲動進場（10/9） ---------- */
+:root{--ease:cubic-bezier(.2,.7,.2,1)}
+.door{position:relative;transition:transform .35s var(--ease),background-color .25s}
+.door-img img{transition:transform .7s var(--ease)}
+.door .go::after,.shortbar em::after,.more::after{display:inline-block;transition:transform .25s var(--ease)}
+.door::after{content:"";position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.94) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 3l5 5-5 5' fill='none' stroke='%23111214' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat;
+  box-shadow:0 0 0 1px rgba(17,18,20,.06);opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .35s var(--ease);pointer-events:none}
+.door:active{transform:scale(.985)}
+.shortbar a{transition:transform .3s var(--ease),background-color .25s}
+.shot a.zoom{cursor:zoom-in;transition:transform .35s var(--ease)}
+.shot a.zoom img{transition:transform .6s var(--ease)}
+@media (hover:hover){
+  .door:hover{transform:translateY(-4px)}
+  .door:hover .door-img img{transform:scale(1.05)}
+  .door:hover::after{opacity:1;transform:none}
+  .door:hover .go::after,.shortbar a:hover em::after,.more:hover::after{transform:translateX(4px)}
+  .shortbar a:hover{transform:translateY(-2px)}
+  .shot a.zoom:hover{transform:translateY(-3px)}
+  .shot a.zoom:hover img{transform:scale(1.02)}
+}
+@media (hover:none){
+  .door::after{opacity:1;transform:none}
+  .shortbar a:active,.shot a.zoom:active{transform:scale(.985)}
+}
+/* 首頁拼貼：載入時依序浮上來 */
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.collage .pc{animation:rise .9s var(--ease) both}
+.collage .pc1{animation-delay:.05s}.collage .pc2{animation-delay:.15s}.collage .pc3{animation-delay:.25s}.collage .pc4{animation-delay:.35s}.collage .pc5{animation-delay:.45s}
+/* 捲動進場（只有 JS 加上 .rv 才會作用，沒有 JS 時內容照常顯示） */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .collage .pc{animation:none}
+  .rv{opacity:1;transform:none;transition:none}
+  .door,.door-img img,.shot a.zoom,.shot a.zoom img,.shortbar a{transition:none}
+}
+
+/* ---------- 首頁：老師條（10/9 移到入口卡上方） ---------- */
+.teacher-band{padding-top:clamp(32px,4vw,48px)}
+.teacher{display:flex;align-items:center;gap:20px 28px;flex-wrap:wrap;background:var(--bg-2);border-radius:var(--r);padding:18px 24px 18px 18px;color:var(--ink);transition:transform .35s var(--ease),background-color .25s}
+.teacher:hover{text-decoration:none;color:var(--ink);background:#eceef1}
+.teacher img{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:56% 38%}
+.t-main{display:flex;flex-direction:column;gap:2px;flex:1 1 260px}
+.t-name{font-size:21px;font-weight:700}
+.t-sub{font-size:14.5px;color:var(--ink-3)}
+.t-stats{display:flex;gap:28px}
+.t-stats span{display:flex;flex-direction:column;font-size:13px;color:var(--muted);line-height:1.4}
+.t-stats b{font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.t-go{font-size:15px;color:var(--link);white-space:nowrap}
+@media (hover:hover){.teacher:hover{transform:translateY(-3px)}.teacher:hover .go::after{transform:translateX(4px)}}
+@media (max-width:720px){.teacher{padding:16px}.teacher img{width:60px;height:60px}.t-stats{gap:20px;flex-basis:100%}.t-go{flex-basis:100%}}
+@media (max-width:720px){
+  .teacher{position:relative;gap:12px 14px;padding:16px 56px 16px 16px}
+  .t-main{flex:1 1 0;min-width:0}
+  .t-name{font-size:18px}.t-sub{font-size:13.5px}
+  .t-stats b{font-size:22px}
+  .t-go{display:none}
+  .teacher::after{content:"";position:absolute;top:50%;right:14px;margin-top:-16px;width:32px;height:32px;border-radius:50%;
+    background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 3l5 5-5 5' fill='none' stroke='%23111214' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+  .teacher:active{transform:scale(.985)}
+}
+@media (max-width:620px){.door-img{width:calc(100% + 40px)}}
+.collage-cap .go{margin-left:.5em}
+
+/* ---------- 作品集 ---------- */
+.shot.pf figcaption small{font-size:12.5px;font-weight:600;color:var(--link);letter-spacing:.02em}
+.shot.pf figcaption span{font-size:13.5px}
+.pf-intro{max-width:760px;margin:0 auto;text-align:center;font-size:clamp(15px,1.5vw,17px);line-height:1.85;color:var(--ink-3)}
+@media (max-width:620px){.shot.pf figcaption span{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}}
+
+/* 社群連結（追蹤用，不是招生聯絡） */
+.social{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font-size:15px}
+.social a{color:var(--ink-3);border-bottom:1px solid var(--line)}
+.social a:hover{color:var(--ink);border-color:var(--ink-3)}

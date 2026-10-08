@@ -31,6 +31,27 @@
   });
 })();
 
+// 捲動進場：卡片、步驟、素材圖依序浮上來
+(function () {
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = document.querySelectorAll('.door, .card, .steps li, .shot, .stat, .price, .shortbar a, .row, .faq > div');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var t = e.target; t.classList.add('in'); io.unobserve(t);
+      setTimeout(function () { t.classList.remove('rv', 'in'); t.style.transitionDelay = ''; }, 1200); // 進場完就拿掉，滑過效果才不會延遲
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) {
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight) return; // 第一屏內的不動，避免閃一下
+    var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.transitionDelay = Math.min(i % 6, 5) * 60 + 'ms';
+    el.classList.add('rv');
+    io.observe(el);
+  });
+})();
+
 // 30 秒填表（規格：改版研究/各頁內容/09_詢問表單.md）
 // 手機：用 LINE 送出（https://line.me/R/oaMessage/{ID}/?{text}，電腦版 LINE 不支援）
 // 電腦：送到 Google 表單（baxterenglish.ai 名下），回應讀不到，送出後直接顯示成功
@@ -118,7 +139,7 @@
       body.append(F_FROM, location.pathname + (from ? '（' + from + '）' : ''));
       sendBtn.disabled = true; sendBtn.textContent = '送出中…';
       fetch(GFORM, { method: 'POST', mode: 'no-cors', body: body }).then(function () {
-        done.textContent = '已收到，一天內會用你留的聯絡方式回覆。急的話也可以直接加 LINE @baxter_english。';
+        done.textContent = '已收到！一天內會用您留的聯絡方式回覆；比較急的話，也可以直接加 LINE @baxter_english。';
         done.hidden = false; sendBtn.textContent = '已送出';
       }, function () {
         err.textContent = '送出失敗，請改用「用 LINE 送出」，或直接加 LINE @baxter_english。';
