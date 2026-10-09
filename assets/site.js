@@ -148,3 +148,24 @@
     });
   });
 })();
+
+// 頁尾訂閱：直接送到 Kit，不跳頁（10/9）
+(function () {
+  document.querySelectorAll('form.sub-form').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var msg = f.querySelector('.sub-msg'), btn = f.querySelector('button');
+      btn.disabled = true; msg.textContent = '送出中…';
+      fetch(f.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(f) })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (j && j.status !== 'failed') {
+            f.classList.add('done'); msg.textContent = '訂閱成功！下個月 1 號寄到您的信箱。';
+          } else {
+            msg.textContent = 'Email 好像不太對，請再確認一次。'; btn.disabled = false;
+          }
+        })
+        .catch(function () { f.submit(); });
+    });
+  });
+})();
