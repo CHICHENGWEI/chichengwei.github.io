@@ -386,3 +386,15 @@ dialog.lb button{position:fixed;top:12px;right:12px;width:48px;height:48px;borde
 .social{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font-size:15px}
 .social a{color:var(--ink-3);border-bottom:1px solid var(--line)}
 .social a:hover{color:var(--ink);border-color:var(--ink-3)}
+
+
+/* ---------- 實際案例（關於老師，10/9） ---------- */
+.caselist{display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)}
+.cg .h3{margin-bottom:10px}
+.cg ul{border-top:1px solid var(--line-2)}
+.cg li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:6px 24px;padding:16px 0;border-bottom:1px solid var(--line-2)}
+.cg li b{font-size:15px;font-weight:600;color:var(--ink-2)}
+.cg li span{font-size:15.5px;line-height:1.7;color:var(--ink-3)}
+@media (max-width:620px){.cg li{grid-template-columns:minmax(0,1fr)}}
+.caseq{margin-top:clamp(32px,4vw,44px);text-align:center;font-size:clamp(17px,1.7vw,20px);font-weight:600;line-height:1.6}
+.caseq span{display:block;margin-top:6px;font-size:14.5px;font-weight:400;color:var(--muted)}
